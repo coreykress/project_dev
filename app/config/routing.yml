@@ -1,0 +1,81 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+#user
+get_users:
+    path:     /users
+    defaults: { _controller: AppBundle:User:users }
+    methods:  [GET]
+
+get_user:
+    path:     /users/{id}
+    defaults: { _controller: AppBundle:User:user}
+    methods:  [GET]
+
+post_user:
+    path:     /users
+    defaults: { _controller: AppBundle:User:createUser}
+    methods:  [POST]
+
+put_user:
+    path:     /users/{id}
+    defaults: { _controller: AppBundle:User:updateUser}
+    methods: [PUT]
+
+archive_user:
+    path:     /users/{id}
+    defaults: { _controller: AppBundle:User:archiveUser}
+    methods: [PUT]
+
+#challenge
+get_challenges:
+    path:     /challenges
+    defaults: { _controller: AppBundle:ChallengeController:challenges }
+    methods:  [GET]
+
+get_challenge:
+    path:     /challenges
+    defaults: { _controller: AppBundle:ChallengeController:challenge }
+    methods:  [GET]
+
+post_challenge:
+    path:     /challenges
+    defaults: { _controller: AppBundle:ChallengeController:createChallenge }
+    methods:  [POST]
+
+put_challenge:
+    path:     /challenges
+    defaults: { _controller: AppBundle:ChallengeController:updateChallenge }
+    methods:  [PUT]
+
+archive_challenge:
+    path:     /challenges
+    defaults: { _controller: AppBundle:ChallengeController:archiveChallenge }
+    methods:  [PUT]
+
+#submission
+get_submission:
+    path:     /submissions
+    defaults: { _controller: AppBundle:SubmissionController:submissions }
+    methods:  [GET]
+
+get_submission:
+    path:     /submission
+    defaults: { _controller: AppBundle:ChallengeController:submission }
+    methods:  [GET]
+
+post_submission:
+    path:     /submission
+    defaults: { _controller: AppBundle:ChallengeController:createSubmission }
+    methods:  [POST]
+
+put_submission:
+    path:     /submission/{id}
+    defaults: { _controller: AppBundle:ChallengeController:updateSubmission }
+    methods:  [PUT]
+
+archive_submission:
+    path:     /submission/{id}
+    defaults: { _controller: AppBundle:ChallengeController:archiveSubmission }
+    methods:  [PUT]

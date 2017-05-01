@@ -1,0 +1,66 @@
+AppBundle\Entity\User:
+    Attributes:
+        id:
+            groups: ['user', 'challenge', 'submission']
+        firstName:
+            groups: ['user', 'challenge', 'submission']
+        lastName:
+            groups: ['user', 'challenge', 'submission']
+        userName:
+            groups: ['user', 'challenge', 'submission']
+        email:
+            groups: ['user', 'challenge', 'submission']
+        password:
+            groups: ['user', 'challenge', 'submission']
+        salt:
+            groups: ['user', 'challenge', 'submission']
+        createdAt:
+            groups: ['user', 'challenge', 'submission']
+        updatedAt:
+            groups: ['user', 'challenge', 'submission']
+        isAdmin:
+            groups: ['user', 'challenge', 'submission']
+
+AppBundle\Entity\Challenge:
+    Attributes:
+        id:
+            groups: ['user', 'challenge', 'submission']
+        title:
+            groups: ['user', 'challenge', 'submission']
+        createdAt:
+            groups: ['user', 'challenge', 'submission']
+        updatedAt:
+            groups: ['user', 'challenge', 'submission']
+        link:
+            groups: ['user', 'challenge', 'submission']
+        description:
+            groups: ['user', 'challenge', 'submission']
+        endsAt:
+            groups: ['user', 'challenge', 'submission']
+        tags:
+            groups: ['user', 'challenge', 'submission']
+        user:
+            groups: ['user', 'challenge', 'submission']
+        submissions:
+            groups: ['user', 'challenge']
+
+AppBundle\Entity\Submission:
+    Attributes:
+        id:
+            groups: ['user', 'submission', 'challenge']
+        title:
+            groups: ['user', 'submission', 'challenge']
+        submittedAt:
+            groups: ['user', 'submission', 'challenge']
+        updatedAt:
+            groups: ['user', 'submission', 'challenge']
+        link:
+            groups: ['user', 'submission', 'challenge']
+        score:
+            groups: ['user', 'submission', 'challenge']
+        description:
+            groups: ['user', 'submission', 'challenge']
+        challenge:
+            groups: ['user', 'submission']
+        user:
+            groups: ['user', 'submission', 'challenge']

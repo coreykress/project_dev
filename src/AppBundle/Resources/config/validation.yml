@@ -1,0 +1,45 @@
+AppBundle/Entity/User:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: email
+    properties:
+        firstName:
+            - NotBlank: ~
+            - Type: string
+            - Length:
+                  min: 3
+                  minMessage: 'Your first name must be at least {{ limit }} characters long'
+        lastName:
+            - NotBlank: ~
+            - Type: string
+            - Length:
+                  min: 3
+                  minMessage: 'Your last name must be at least {{ limit }} characters long'
+        userName:
+            - NotBlank: ~
+            - Type: string
+            - Length:
+                  min: 3
+                  minMessage: 'Your username must be at least {{ limit }} characters long'
+        email:
+            - NotBlank: ~
+            - Email:
+                message: 'The email "{{ value }}" is not a valid email.'
+                checkMX: true
+        password:
+            - NotBlank: ~
+            - Type: string
+            - Length:
+                  min: 8
+                  minMessage: 'Your password must be at least {{ limit }} characters long'
+        salt:
+            - NotBlank: ~
+            - Type: string
+        createdAt:
+            - NotBlank: ~
+            - DateTime: ~
+        updatedAt:
+            - NotBlank: ~
+            - DateTime: ~
+        isAdmin:
+            - NotBlank: ~
+            - Type: bool

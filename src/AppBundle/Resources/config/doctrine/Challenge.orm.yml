@@ -1,0 +1,44 @@
+AppBundle\Entity\Challenge:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\ChallengeRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        createdAt:
+            type: datetime
+            column: created_at
+        updatedAt:
+            type: datetime
+            column: updated_at
+        link:
+            type: string
+            length: 255
+        description:
+            type: blob
+        endsAt:
+            type: datetime
+            column: ends_at
+        tags:
+            type: json_array
+            nullable: true
+    oneToMany:
+        submissions:
+            targetEntity: Submission
+            mappedBy: challenge
+    oneToOne:
+      user:
+        targetEntity: User
+        joinColumn:
+          name: user_id
+          referencedColumnName: id
+    lifecycleCallbacks:
+            preUpdate: [ setUpdatedAtValue ]
+

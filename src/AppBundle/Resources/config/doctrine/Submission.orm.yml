@@ -1,0 +1,41 @@
+AppBundle\Entity\Submission:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\SubmissionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        submittedAt:
+            type: datetime
+            column: submitted_at
+        updatedAt:
+            type: datetime
+            column: updated_at
+        link:
+            type: string
+            length: 255
+        score:
+            type: integer
+        description:
+            type: blob
+    manyToOne:
+        challenge:
+            targetEntity: Challenge
+            inversedBy: submissions
+            joinColumn:
+                name: challenge_id
+                referencedColumnName: id
+    oneToOne:
+      user:
+        targetEntity: User
+        joinColumn:
+          name: user_id
+          referencedColumnName: id
+    lifecycleCallbacks: {  }
